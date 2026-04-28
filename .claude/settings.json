@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Jithu J George/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/**)",
+      "Read(//c/Users/Jithu J George/.claude/**)",
+      "Bash(bash \"C:/Users/Jithu J George/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh\" --project-dir \"d:/portfolio-website\")",
+      "Bash(sed -n '40,43p' /d/portfolio-website/style.css)",
+      "Bash(sed -n '206p' /d/portfolio-website/style.css)"
+    ]
+  }
+}
