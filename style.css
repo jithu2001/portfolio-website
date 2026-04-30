@@ -37,17 +37,9 @@ html { scroll-behavior: smooth; }
   background-repeat: repeat;
 }
 
-/* ── Glassmorphism nav (state toggled by JS) ─────────────────── */
+/* ── Floating island nav — GSAP animates in from y:-80 ───────── */
 #navbar {
-  background: transparent;
-  transition: background 0.4s ease, backdrop-filter 0.4s ease,
-              box-shadow 0.4s ease;
-}
-#navbar.nav-scrolled {
-  background: rgba(19, 19, 19, 0.72);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 8px 32px rgba(229, 226, 225, 0.04);
+  opacity: 0;
 }
 
 /* ── Mobile menu ─────────────────────────────────────────────── */
@@ -211,7 +203,7 @@ html { scroll-behavior: smooth; }
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Scroll margin so fixed nav never covers anchors ─────────── */
-section[id] { scroll-margin-top: 80px; }
+section[id] { scroll-margin-top: 100px; }
 
 /* ── Hide system cursor (class injected by JS on pointer devices) */
 .has-custom-cursor,

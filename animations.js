@@ -22,7 +22,11 @@
   var IS_TOUCH  = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   var REDUCED   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (REDUCED) return;
+  if (REDUCED) {
+    var nb = document.getElementById('navbar');
+    if (nb) nb.style.opacity = '1';
+    return;
+  }
 
 
   /* ═══════════════════════════════════════════════════════════════
@@ -188,12 +192,18 @@
         var t=document.querySelector(href);
         if(!t) return;
         e.preventDefault();
-        window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80, behavior:'smooth'});
+        window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-100, behavior:'smooth'});
       });
     });
 
     if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined') return;
     gsap.registerPlugin(ScrollTrigger);
+
+    /* ── Floating navbar entrance ── */
+    gsap.fromTo('#navbar',
+      { y: -80, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.3 }
+    );
 
     var hc = document.querySelector('#hero .max-w-7xl');
     if(hc) gsap.to(hc,{y:IS_MOBILE?-48:-88,ease:'none',
